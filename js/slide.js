@@ -12,12 +12,14 @@ export default class Slide {
 
   updatePosition(clientX) {
     this.dist.movement = (this.dist.startX - clientX) * 1.6;
+    console.log(this.dist.movement);
     return this.dist.finalPosition - this.dist.movement;
   }
 
   onStart(event) {
     event.preventDefault();
     this.dist.startX = event.clientX;
+
     this.wrapper.addEventListener('mousemove', this.onMove);
   }
 
